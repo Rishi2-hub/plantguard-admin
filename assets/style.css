@@ -1,0 +1,1837 @@
+:root {
+    --primary: #2A3C90;
+    --primary-dark: #1F2E78;
+    --background: #2A3C90;
+    --sidebar: #F8FAFF;
+    --white: #FFFFFF;
+    --text: #172033;
+    --muted: #64748B;
+    --border: #DCE3F0;
+}
+
+/* ================================
+   MAIN APPLICATION
+================================ */
+
+html,
+body,
+.stApp,
+[data-testid="stAppViewContainer"],
+[data-testid="stMain"] {
+    background: var(--background) !important;
+}
+
+.block-container {
+    max-width: 1600px;
+    padding-top: 1.5rem;
+    padding-right: 2rem;
+    padding-bottom: 3rem;
+    padding-left: 2rem;
+}
+
+/* Keep Streamlit header available for sidebar control */
+
+[data-testid="stHeader"] {
+    background: transparent !important;
+}
+
+#MainMenu {
+    visibility: hidden;
+}
+
+footer {
+    visibility: hidden;
+}
+
+[data-testid="stToolbar"] {
+    display: none;
+}
+
+[data-testid="stDecoration"] {
+    display: none;
+}
+
+/* ================================
+   SIDEBAR
+================================ */
+
+section[data-testid="stSidebar"] {
+    min-width: 290px !important;
+    width: 290px !important;
+    background: var(--sidebar) !important;
+    border-right: 1px solid var(--border);
+}
+
+section[data-testid="stSidebar"] > div {
+    background: var(--sidebar) !important;
+}
+
+section[data-testid="stSidebar"] .block-container {
+    padding: 1.25rem 1rem 1.5rem;
+}
+
+.sidebar-brand {
+    display: flex;
+    align-items: center;
+    gap: 13px;
+    padding: 8px 5px 25px;
+}
+
+.sidebar-logo {
+    width: 48px;
+    height: 48px;
+    border-radius: 14px;
+    background: #E6F4EA;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    font-size: 27px;
+    flex-shrink: 0;
+}
+
+.sidebar-brand-name {
+    color: var(--primary);
+    font-size: 24px;
+    font-weight: 850;
+    line-height: 1.1;
+}
+
+.sidebar-brand-subtitle {
+    color: #64748B;
+    font-size: 11px;
+    font-weight: 800;
+    letter-spacing: 1.5px;
+    margin-top: 5px;
+}
+
+.sidebar-section-label {
+    color: #d4e0f5;
+    font-size: 11px;
+    font-weight: 800;
+    letter-spacing: 1.2px;
+    margin: 8px 8px 10px;
+}
+
+.sidebar-profile {
+    background: #FFFFFF;
+    border: 1px solid var(--border);
+    border-radius: 16px;
+    padding: 15px;
+    display: flex;
+    align-items: center;
+    gap: 12px;
+    margin-top: 30px;
+    margin-bottom: 14px;
+    box-shadow: 0 8px 20px rgba(12, 25, 70, 0.08);
+}
+
+.sidebar-avatar {
+    width: 46px;
+    height: 46px;
+    border-radius: 50%;
+    background: var(--primary);
+    color: #FFFFFF;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    font-weight: 850;
+    flex-shrink: 0;
+}
+
+.sidebar-profile-name {
+    color: var(--text);
+    font-size: 14px;
+    font-weight: 850;
+}
+
+.sidebar-profile-role {
+    color: #2563EB;
+    font-size: 12px;
+    font-weight: 750;
+    margin-top: 4px;
+}
+
+/* ================================
+   BUTTONS
+================================ */
+
+.stButton > button {
+    min-height: 46px;
+    border: none;
+    border-radius: 11px;
+    background: var(--primary);
+    color: #FFFFFF !important;
+    font-weight: 750;
+}
+
+.stButton > button:hover {
+    background: var(--primary-dark);
+    color: #FFFFFF !important;
+    border: none;
+}
+
+/* ================================
+   NAVBAR
+================================ */
+
+.dashboard-navbar {
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    gap: 24px;
+    background: #FFFFFF;
+    border-radius: 18px;
+    padding: 22px 25px;
+    margin-bottom: 28px;
+    box-shadow: 0 12px 28px rgba(10, 20, 60, 0.2);
+}
+
+.navbar-left {
+    flex: 1;
+}
+
+.dashboard-title {
+    color: var(--text);
+    font-size: 34px;
+    font-weight: 850;
+    line-height: 1.1;
+}
+
+.dashboard-subtitle {
+    color: var(--muted);
+    font-size: 15px;
+    margin-top: 7px;
+}
+
+.navbar-right {
+    display: flex;
+    align-items: center;
+    gap: 12px;
+}
+
+.date-card {
+    background: #EEF2FF;
+    border: 1px solid #D9E2FF;
+    color: var(--primary);
+    border-radius: 12px;
+    padding: 12px 16px;
+    font-size: 13px;
+    font-weight: 800;
+}
+
+.admin-badge {
+    background: var(--primary);
+    color: #FFFFFF;
+    border-radius: 12px;
+    padding: 12px 17px;
+    font-size: 13px;
+    font-weight: 800;
+}
+
+/* ================================
+   DASHBOARD HEADING
+================================ */
+
+.dashboard-heading {
+    margin-bottom: 24px;
+}
+
+.dashboard-heading h2 {
+    color: #FFFFFF;
+    font-size: 29px;
+    font-weight: 850;
+    margin: 0;
+}
+
+.dashboard-heading p {
+    color: #DCE5FF;
+    font-size: 15px;
+    margin: 8px 0 0;
+}
+
+/* ================================
+   STAT CARDS
+================================ */
+
+.stat-card {
+    background: #FFFFFF;
+    min-height: 175px;
+    border-radius: 19px;
+    padding: 22px;
+    box-shadow: 0 14px 30px rgba(12, 25, 70, 0.24);
+    transition: transform 0.2s ease;
+}
+
+.stat-card:hover {
+    transform: translateY(-4px);
+}
+
+.stat-card-header {
+    display: flex;
+    align-items: center;
+    gap: 13px;
+}
+
+.stat-card-icon {
+    width: 52px;
+    height: 52px;
+    border-radius: 15px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    font-size: 25px;
+}
+
+.stat-card-title {
+    color: #7389b0;
+    font-size: 15px;
+    font-weight: 750;
+}
+
+.stat-card-value {
+    color: var(--text);
+    font-size: 42px;
+    font-weight: 850;
+    line-height: 1;
+    margin-top: 22px;
+}
+
+.stat-card-subtitle {
+    font-size: 14px;
+    font-weight: 750;
+    margin-top: 13px;
+}
+
+/* ================================
+   ALERT
+================================ */
+
+.disease-alert {
+    display: flex;
+    align-items: center;
+    gap: 16px;
+    background: #FFF5F5;
+    border-left: 6px solid #7a0a0a;
+    border-radius: 17px;
+    padding: 19px 21px;
+    margin: 26px 0;
+    box-shadow: 0 12px 27px rgba(12, 25, 70, 0.18);
+}
+
+.disease-alert-icon {
+    width: 48px;
+    height: 48px;
+    border-radius: 50%;
+    background: #FEE2E2;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    font-size: 22px;
+}
+
+.disease-alert-content {
+    flex: 1;
+}
+
+.disease-alert-title {
+    color: #991B1B;
+    font-size: 16px;
+    font-weight: 850;
+}
+
+.disease-alert-description {
+    color: #A33A3A;
+    font-size: 13px;
+    margin-top: 5px;
+}
+
+.disease-alert-action {
+    background: #DC2626;
+    color: #FFFFFF;
+    border-radius: 10px;
+    padding: 10px 15px;
+    font-size: 13px;
+    font-weight: 800;
+}
+
+/* ================================
+   ACTIVITY PANEL
+================================ */
+
+.dashboard-panel {
+    background: #FFFFFF;
+    border-radius: 19px;
+    padding: 22px;
+    min-height: 405px;
+    box-shadow: 0 14px 30px rgba(12, 25, 70, 0.24);
+}
+
+.panel-header {
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    margin-bottom: 14px;
+}
+
+.panel-title {
+    color: var(--text);
+    font-size: 21px;
+    font-weight: 850;
+}
+
+.panel-subtitle {
+    color: var(--muted);
+    font-size: 13px;
+    margin-top: 4px;
+}
+
+.panel-action {
+    background: #EEF2FF;
+    color: var(--primary);
+    border-radius: 9px;
+    padding: 8px 12px;
+    font-size: 12px;
+    font-weight: 800;
+}
+
+.activity-item {
+    display: flex;
+    align-items: center;
+    gap: 13px;
+    padding: 15px 0;
+    border-bottom: 1px solid #E7ECF4;
+}
+
+.activity-item:last-child {
+    border-bottom: none;
+}
+
+.activity-icon {
+    width: 43px;
+    height: 43px;
+    border-radius: 50%;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    font-size: 19px;
+}
+
+.activity-content {
+    flex: 1;
+}
+
+.activity-title {
+    color: var(--text);
+    font-size: 14px;
+    font-weight: 800;
+}
+
+.activity-description {
+    color: var(--muted);
+    font-size: 12px;
+    margin-top: 3px;
+}
+
+.activity-time {
+    color: #b1c2df;
+    font-size: 11px;
+    white-space: nowrap;
+}
+
+/* ================================
+   CHART
+================================ */
+
+.chart-heading {
+    background: #FFFFFF;
+    border-radius: 18px 18px 0 0;
+    padding: 21px 22px 0;
+}
+
+[data-testid="stPlotlyChart"] {
+    background: #FFFFFF !important;
+    border-radius: 0 0 18px 18px;
+    overflow: hidden;
+}
+
+/* ================================
+   RESPONSIVE
+================================ */
+
+@media (max-width: 1000px) {
+    .dashboard-navbar {
+        flex-direction: column;
+        align-items: flex-start;
+    }
+
+    .navbar-right {
+        width: 100%;
+    }
+}
+
+/* =========================================================
+   FORCE SIDEBAR TO REMAIN VISIBLE
+========================================================= */
+
+section[data-testid="stSidebar"] {
+    display: block !important;
+    visibility: visible !important;
+    transform: translateX(0) !important;
+    left: 0 !important;
+    min-width: 285px !important;
+    width: 285px !important;
+    background: #404da9 !important;
+    border-right: 1px solid #3f54c9 !important;
+}
+
+section[data-testid="stSidebar"][aria-expanded="false"] {
+    display: block !important;
+    visibility: visible !important;
+    transform: translateX(0) !important;
+    margin-left: 0 !important;
+    left: 0 !important;
+    min-width: 285px !important;
+    width: 285px !important;
+}
+
+section[data-testid="stSidebar"] > div {
+    background: #404db5 !important;
+    width: 285px !important;
+}
+
+section[data-testid="stSidebar"] .block-container {
+    padding: 1.25rem 1rem 1.5rem !important;
+}
+
+/* Hide sidebar collapse button because sidebar is permanently open */
+button[data-testid="stSidebarCollapseButton"] {
+    display: none !important;
+}
+
+/* Ensure main dashboard starts after sidebar */
+[data-testid="stAppViewContainer"] > .main {
+    margin-left: 0 !important;
+}
+
+/* Sidebar general text */
+section[data-testid="stSidebar"] p,
+section[data-testid="stSidebar"] label {
+    color: #d2e2fe !important;
+}
+
+/* Sidebar branding */
+.sidebar-brand {
+    display: flex;
+    align-items: center;
+    gap: 13px;
+    padding: 8px 6px 25px;
+    border-bottom: 1px solid #38489f;
+    margin-bottom: 18px;
+}
+
+.sidebar-logo {
+    width: 46px;
+    height: 46px;
+    border-radius: 13px;
+    background: #16a34a;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    font-size: 25px;
+    flex-shrink: 0;
+}
+
+.sidebar-brand-name {
+    color: #ffffff !important;
+    font-size: 22px;
+    font-weight: 850;
+}
+
+.sidebar-brand-subtitle {
+    color: #777f9d !important;
+    font-size: 11px;
+    font-weight: 750;
+    letter-spacing: 1px;
+    margin-top: 4px;
+}
+
+.sidebar-section-label {
+    color: #dde3ff !important;
+    font-size: 11px;
+    font-weight: 800;
+    letter-spacing: 1.2px;
+    margin: 17px 9px 8px;
+}
+
+/* Admin profile */
+.sidebar-profile {
+    background: transparent;
+    border-top: 1px solid #1f3197;
+    border-bottom: none;
+    border-left: none;
+    border-right: none;
+    border-radius: 0;
+    padding: 22px 8px 14px;
+    display: flex;
+    align-items: center;
+    gap: 12px;
+    margin-top: 80px;
+    box-shadow: none;
+}
+
+.sidebar-avatar {
+    width: 46px;
+    height: 46px;
+    border-radius: 50%;
+    background: #22c55e;
+    color: #ffffff;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    font-size: 17px;
+    font-weight: 850;
+}
+
+.sidebar-profile-name {
+    color: #ffffff !important;
+    font-size: 14px;
+    font-weight: 800;
+}
+
+.sidebar-profile-role {
+    color: #747b98 !important;
+    font-size: 12px;
+    margin-top: 4px;
+}
+
+/* Sidebar logout button */
+section[data-testid="stSidebar"] .stButton > button {
+    background: transparent !important;
+    color: #ff4d57 !important;
+    border: none !important;
+    text-align: left !important;
+    justify-content: flex-start !important;
+    padding-left: 8px !important;
+    box-shadow: none !important;
+}
+
+section[data-testid="stSidebar"] .stButton > button:hover {
+    background: #2b151b !important;
+    color: #ff4d57 !important;
+}
+
+/* ================================
+   MANAGEMENT PAGES
+================================ */
+
+.page-heading {
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    gap: 20px;
+    margin-bottom: 24px;
+}
+
+.page-title {
+    color: #FFFFFF;
+    font-size: 30px;
+    font-weight: 850;
+}
+
+.page-subtitle {
+    color: #DCE5FF;
+    font-size: 14px;
+    margin-top: 7px;
+}
+
+.page-badge {
+    background: #FFFFFF;
+    color: #2A3C90;
+    padding: 12px 16px;
+    border-radius: 12px;
+    font-size: 13px;
+    font-weight: 800;
+    box-shadow: 0 10px 24px rgba(12, 25, 70, 0.18);
+}
+
+.summary-card {
+    background: #FFFFFF;
+    border-radius: 16px;
+    padding: 17px;
+    display: flex;
+    align-items: center;
+    gap: 14px;
+    margin: 8px 0 22px;
+    box-shadow: 0 12px 27px rgba(25, 52, 148, 0.22);
+}
+
+.summary-icon {
+    width: 47px;
+    height: 47px;
+    border-radius: 13px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    font-size: 21px;
+    font-weight: 850;
+}
+
+.summary-blue {
+    background: #DBEAFE;
+    color: #2563EB;
+}
+
+.summary-green {
+    background: #DCFCE7;
+    color: #16A34A;
+}
+
+.summary-red {
+    background: #FEE2E2;
+    color: #DC2626;
+}
+
+.summary-label {
+    color: #c8dcf8;
+    font-size: 13px;
+    font-weight: 750;
+}
+
+.summary-value {
+    color: #324d88;
+    font-size: 27px;
+    font-weight: 850;
+    margin-top: 3px;
+}
+
+.section-panel-heading {
+    background: #FFFFFF;
+    border-radius: 16px 16px 0 0;
+    padding: 18px 20px;
+    margin-top: 12px;
+}
+
+.form-heading {
+    border-radius: 16px;
+    margin-top: 28px;
+}
+
+[data-testid="stDataFrame"] {
+    background: #FFFFFF;
+    border-radius: 0 0 16px 16px;
+    overflow: hidden;
+    box-shadow: 0 12px 27px rgba(12, 25, 70, 0.22);
+}
+
+[data-testid="stForm"] {
+    background: #FFFFFF;
+    border: none;
+    border-radius: 17px;
+    padding: 22px;
+    box-shadow: 0 12px 27px rgba(12, 25, 70, 0.22);
+}
+
+[data-testid="stForm"] label {
+    color: #dae9ff !important;
+    font-weight: 700 !important;
+}
+
+.danger-panel {
+    background: #FFF5F5;
+    border-left: 6px solid #DC2626;
+    border-radius: 16px;
+    padding: 19px;
+    margin-top: 27px;
+    margin-bottom: 12px;
+}
+
+.danger-title {
+    color: #991B1B;
+    font-size: 16px;
+    font-weight: 850;
+}
+
+.danger-description {
+    color: #A33A3A;
+    font-size: 13px;
+    margin-top: 6px;
+}
+
+/* ================================
+   FARMER MANAGEMENT
+================================ */
+
+.farmer-details-card {
+    background: #FFFFFF;
+    border-radius: 17px;
+    padding: 20px;
+    display: flex;
+    align-items: center;
+    gap: 16px;
+    margin-top: 14px;
+    margin-bottom: 18px;
+    box-shadow: 0 12px 27px rgba(12, 25, 70, 0.22);
+}
+
+.farmer-avatar {
+    width: 58px;
+    height: 58px;
+    border-radius: 50%;
+    background: #2A3C90;
+    color: #FFFFFF;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    font-size: 23px;
+    font-weight: 850;
+    flex-shrink: 0;
+}
+
+.farmer-details-name {
+    color: #426bc1;
+    font-size: 18px;
+    font-weight: 850;
+}
+
+.farmer-details-email {
+    color: #64748B;
+    font-size: 14px;
+    margin-top: 4px;
+}
+
+.farmer-details-meta {
+    color: #6a86ad;
+    font-size: 13px;
+    margin-top: 8px;
+}
+
+/* ================================
+   AUDIT LOGS
+================================ */
+
+.summary-warning {
+    background: #FEF3C7;
+    color: #D97706;
+}
+
+.audit-info-card {
+    background: #EEF2FF;
+    border-left: 6px solid #2A3C90;
+    border-radius: 16px;
+    padding: 18px;
+    display: flex;
+    align-items: center;
+    gap: 14px;
+    margin-top: 22px;
+    box-shadow: 0 10px 24px rgba(12, 25, 70, 0.18);
+}
+
+.audit-info-icon {
+    width: 45px;
+    height: 45px;
+    border-radius: 50%;
+    background: #DBE4FF;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    font-size: 21px;
+    flex-shrink: 0;
+}
+
+.audit-info-title {
+    color: #39589d;
+    font-size: 15px;
+    font-weight: 850;
+}
+
+.audit-info-text {
+    color: #64748B;
+    font-size: 13px;
+    margin-top: 4px;
+}
+
+/* ================================
+   ADD ADMIN
+================================ */
+
+.admin-info-card {
+    background: #FFFFFF;
+    border-radius: 20px;
+    padding: 25px;
+    box-shadow: 0 14px 30px rgba(12, 25, 70, 0.22);
+}
+
+.admin-info-icon {
+    width: 58px;
+    height: 58px;
+    border-radius: 17px;
+    background: #E0E7FF;
+    color: #2A3C90;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    font-size: 27px;
+    margin-bottom: 18px;
+}
+
+.admin-info-title {
+    color: #4164b0;
+    font-size: 21px;
+    font-weight: 850;
+}
+
+.admin-info-text {
+    color: #64748B;
+    font-size: 14px;
+    line-height: 1.6;
+    margin-top: 9px;
+}
+
+.admin-info-divider {
+    height: 1px;
+    background: #E2E8F0;
+    margin: 21px 0;
+}
+
+.admin-rule-item {
+    display: flex;
+    align-items: flex-start;
+    gap: 10px;
+    color: #546782;
+    font-size: 14px;
+    line-height: 1.45;
+    margin-bottom: 14px;
+}
+
+.admin-rule-item span {
+    color: #16A34A;
+    font-weight: 900;
+}
+
+.security-warning-card {
+    background: #FFF7ED;
+    border-left: 6px solid #F59E0B;
+    border-radius: 16px;
+    padding: 18px;
+    margin-top: 20px;
+    box-shadow: 0 10px 24px rgba(62, 90, 192, 0.16);
+}
+
+.security-warning-title {
+    color: #9A5A00;
+    font-size: 15px;
+    font-weight: 850;
+}
+
+.security-warning-text {
+    color: #A16207;
+    font-size: 13px;
+    line-height: 1.5;
+    margin-top: 7px;
+}
+
+.admin-list-heading {
+    margin-top: 28px;
+}
+
+/* ================================
+   SETTINGS
+================================ */
+
+[data-testid="stTabs"] button {
+    color: #FFFFFF !important;
+    font-weight: 750;
+}
+
+[data-testid="stTabs"] button[aria-selected="true"] {
+    color: #FFFFFF !important;
+    border-bottom-color: #FFFFFF !important;
+}
+
+.settings-profile-card,
+.security-status-card {
+    background: #FFFFFF;
+    border-radius: 20px;
+    padding: 25px;
+    box-shadow: 0 14px 30px rgba(34, 67, 186, 0.22);
+}
+
+.settings-profile-avatar {
+    width: 78px;
+    height: 78px;
+    border-radius: 50%;
+    background: #2A3C90;
+    color: #FFFFFF;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    margin: 0 auto;
+    font-size: 26px;
+    font-weight: 850;
+}
+
+.settings-profile-name {
+    color: #172033;
+    font-size: 20px;
+    font-weight: 850;
+    text-align: center;
+    margin-top: 15px;
+}
+
+.settings-profile-role {
+    color: #2563EB;
+    font-size: 14px;
+    font-weight: 750;
+    text-align: center;
+    margin-top: 4px;
+}
+
+.settings-divider {
+    height: 1px;
+    background: #E2E8F0;
+    margin: 22px 0;
+}
+
+.settings-detail-row {
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    gap: 15px;
+    color: #64748B;
+    font-size: 13px;
+    padding: 10px 0;
+}
+
+.settings-detail-row strong {
+    color: #3e5ea4;
+    text-align: right;
+}
+
+.settings-active {
+    color: #16A34A !important;
+}
+
+.security-status-icon {
+    width: 60px;
+    height: 60px;
+    border-radius: 17px;
+    background: #E0E7FF;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    font-size: 27px;
+    margin-bottom: 17px;
+}
+
+.security-status-title {
+    color: #486cba;
+    font-size: 21px;
+    font-weight: 850;
+}
+
+.security-status-badge {
+    display: inline-block;
+    background: #DCFCE7;
+    color: #15803D;
+    padding: 7px 13px;
+    border-radius: 999px;
+    font-size: 13px;
+    font-weight: 800;
+    margin-top: 10px;
+    margin-bottom: 20px;
+}
+
+.security-item {
+    color: #475569;
+    font-size: 14px;
+    margin-top: 14px;
+}
+
+.security-item span {
+    color: #16A34A;
+    font-weight: 900;
+    margin-right: 8px;
+}
+
+.security-warning-item span {
+    color: #F59E0B;
+}
+
+/* =========================================
+   SETTINGS FORM TEXT FIX
+========================================= */
+
+/* Toggle labels */
+[data-testid="stToggle"] label,
+[data-testid="stToggle"] label p,
+[data-testid="stToggle"] span {
+    color: #3c5fab !important;
+    opacity: 1 !important;
+    font-weight: 650 !important;
+}
+
+/* Checkbox labels */
+[data-testid="stCheckbox"] label,
+[data-testid="stCheckbox"] label p,
+[data-testid="stCheckbox"] span {
+    color: #35518d !important;
+    opacity: 1 !important;
+}
+
+/* Multiselect label */
+[data-testid="stMultiSelect"] label,
+[data-testid="stMultiSelect"] label p {
+    color: #3d5fa6 !important;
+    opacity: 1 !important;
+    font-weight: 700 !important;
+}
+
+/* Multiselect input area */
+[data-testid="stMultiSelect"] > div > div {
+    background: #FFFFFF !important;
+    color: #3f5b97 !important;
+    border: 1px solid #CBD5E1 !important;
+}
+
+/* Selected multiselect tag */
+[data-testid="stMultiSelect"] span[data-baseweb="tag"] {
+    background: #2A3C90 !important;
+    color: #FFFFFF !important;
+}
+
+/* Selected tag text and close icon */
+[data-testid="stMultiSelect"] span[data-baseweb="tag"] span,
+[data-testid="stMultiSelect"] span[data-baseweb="tag"] svg {
+    color: #FFFFFF !important;
+    fill: #FFFFFF !important;
+}
+
+/* Form labels generally */
+[data-testid="stForm"] label,
+[data-testid="stForm"] label p {
+    color: #385592 !important;
+    opacity: 1 !important;
+}
+
+/* Help icons */
+[data-testid="stTooltipIcon"] {
+    color: #64748B !important;
+}
+
+/* Form background */
+[data-testid="stForm"] {
+    background: #FFFFFF !important;
+}
+
+.page-heading{
+    display:flex;
+    justify-content:space-between;
+    align-items:center;
+    margin-bottom:30px;
+}
+
+.page-title{
+    font-size:38px;
+    font-weight:800;
+    color:white;
+}
+
+.page-subtitle{
+    color:#D6E1FF;
+    font-size:16px;
+    margin-top:6px;
+}
+
+.page-badge{
+    background:white;
+    color:#2A3C90;
+    padding:12px 22px;
+    border-radius:12px;
+    font-weight:700;
+}
+
+[data-testid="stDataFrame"]{
+    border-radius:18px;
+    overflow:hidden;
+    border:none;
+}
+
+[data-testid="stDataFrame"] table{
+    font-size:14px;
+}
+
+[data-testid="stDataFrame"] th{
+    background:#2A3C90 !important;
+    color:white !important;
+    font-weight:700;
+}
+
+[data-testid="stDataFrame"] td{
+    background:white !important;
+    color:#33539a !important;
+}
+
+.stButton>button{
+    background:#2A3C90;
+    color:white;
+    border:none;
+    border-radius:12px;
+    height:48px;
+    font-size:16px;
+    font-weight:700;
+}
+
+.stButton>button:hover{
+    background:#20337C;
+}
+
+.stTextInput input,
+.stSelectbox div,
+.stTextArea textarea{
+    border-radius:10px;
+}
+
+[data-testid="stForm"]{
+    background:white;
+    padding:25px;
+    border-radius:18px;
+    box-shadow:0 10px 30px rgba(0,0,0,.15);
+}
+
+button[role="tab"]{
+    color:white !important;
+    font-size:16px;
+    font-weight:700;
+}
+
+button[role="tab"][aria-selected="true"]{
+    border-bottom:3px solid white !important;
+}
+
+[data-testid="stAlert"]{
+    border-radius:12px;
+}
+
+.stat-card{
+    transition:.25s;
+}
+
+.stat-card:hover{
+    transform:translateY(-6px);
+    box-shadow:0 18px 35px rgba(0,0,0,.18);
+}
+
+.js-plotly-plot{
+    border-radius:18px;
+    overflow:hidden;
+}
+
+.block-container{
+    padding-top:25px;
+    padding-bottom:40px;
+    padding-left:40px;
+    padding-right:40px;
+}
+
+/* ===========================
+   LOGIN SCREEN
+=========================== */
+
+.login-brand-panel{
+    background:#111219;
+    padding:35px;
+    border-radius:25px 25px 0 0;
+    display:flex;
+    align-items:center;
+    gap:18px;
+    border:1px solid #2c3040;
+    border-bottom:none;
+    margin-top:45px;
+}
+
+.login-logo-box{
+
+    width:75px;
+    height:75px;
+
+    border-radius:18px;
+
+    background:#18b857;
+
+    display:flex;
+    align-items:center;
+    justify-content:center;
+
+    font-size:42px;
+
+    box-shadow:0 12px 28px rgba(13, 13, 13, 0.3);
+
+}
+
+.login-brand-title{
+
+    color:white;
+    font-size:34px;
+    font-weight:800;
+
+}
+
+.login-brand-console{
+
+    color:#8E95B8;
+    font-size:18px;
+    margin-top:6px;
+
+}
+
+.login-card-header{
+
+    background:#111219;
+    padding:15px 35px 30px;
+    border-left:1px solid #2c3040;
+    border-right:1px solid #2c3040;
+
+}
+
+.login-title{
+
+    font-size:48px;
+    font-weight:800;
+    color:white;
+
+}
+
+.login-subtitle{
+
+    margin-top:12px;
+    font-size:19px;
+    color:#A4ACCC;
+
+}
+
+/* Custom login field labels */
+
+.login-label {
+    color: #FFFFFF !important;
+    font-size: 15px;
+    font-weight: 750;
+    letter-spacing: 0.02em;
+    margin: 6px 0 8px 2px;
+    line-height: 1.2;
+}
+
+.password-label {
+    margin-top: 18px;
+}
+
+
+/* FORM */
+
+[data-testid="stForm"] {
+    background: #E8EDFF !important;
+    border: 1px solid #B8C4F0 !important;
+    padding: 30px !important;
+    border-radius: 22px !important;
+    box-shadow: 0 16px 35px rgba(12, 25, 70, 0.22);
+}
+
+[data-testid="stForm"] label{
+
+    color:#AEB5D0 !important;
+    font-weight:700 !important;
+    font-size:15px !important;
+
+}
+
+[data-testid="stForm"] label,
+[data-testid="stForm"] label p {
+    color: #172033 !important;
+    -webkit-text-fill-color: #172033 !important;
+    opacity: 1 !important;
+    font-weight: 750 !important;
+    font-size: 15px !important;
+}
+
+[data-testid="stForm"] input {
+    background: #FFFFFF !important;
+    color: #172033 !important;
+    -webkit-text-fill-color: #172033 !important;
+    border-radius: 12px !important;
+    border: 1px solid #B8C4D8 !important;
+    min-height: 55px;
+}
+
+[data-testid="stForm"] input::placeholder {
+    color: #7180A2 !important;
+    opacity: 1 !important;
+}
+
+
+
+.login-authorised-note{
+
+    margin-top:30px;
+
+    text-align:center;
+
+    color:#9AA3C2;
+
+    font-size:15px;
+
+}
+
+.login-helper{
+
+    margin-top:15px;
+
+    text-align:center;
+
+    color:#A5ADCA;
+
+    font-size:15px;
+
+    line-height:1.8;
+
+}
+
+.login-helper strong{
+
+    color:#22C55E;
+
+}
+
+/* =========================================================
+   FARMER ACCOUNTS — LIGHT THEME
+========================================================= */
+
+.farmers-light-header {
+    display: flex;
+    align-items: flex-start;
+    justify-content: space-between;
+    gap: 20px;
+    margin-bottom: 24px;
+}
+
+.farmers-light-title {
+    color: #FFFFFF;
+    font-size: 30px;
+    font-weight: 850;
+}
+
+.farmers-light-subtitle {
+    color: #DCE5FF;
+    font-size: 14px;
+    margin-top: 7px;
+}
+
+.farmers-api-status {
+    display: flex;
+    align-items: center;
+    gap: 8px;
+    background: #FFFFFF;
+    color: #475569;
+    border-radius: 11px;
+    padding: 10px 14px;
+    font-size: 13px;
+    font-weight: 750;
+    box-shadow: 0 8px 22px rgba(12, 25, 70, 0.18);
+}
+
+.farmers-api-dot {
+    width: 8px;
+    height: 8px;
+    border-radius: 50%;
+    background: #22C55E;
+    box-shadow: 0 0 8px rgba(34, 197, 94, 0.6);
+}
+
+/* Summary cards */
+
+.farmer-light-metric {
+    background: #FFFFFF;
+    border-radius: 18px;
+    padding: 20px;
+    min-height: 115px;
+    display: flex;
+    align-items: center;
+    gap: 15px;
+    box-shadow: 0 12px 28px rgba(12, 25, 70, 0.22);
+    margin-bottom: 20px;
+    border-top: 5px solid transparent;
+}
+
+.metric-total {
+    border-top-color: #2563EB;
+}
+
+.metric-active {
+    border-top-color: #16A34A;
+}
+
+.metric-inactive {
+    border-top-color: #DC2626;
+}
+
+.farmer-light-metric-icon {
+    width: 50px;
+    height: 50px;
+    border-radius: 14px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    font-size: 23px;
+    font-weight: 850;
+    flex-shrink: 0;
+}
+
+.icon-blue {
+    background: #DBEAFE;
+    color: #2563EB;
+}
+
+.icon-green {
+    background: #DCFCE7;
+    color: #16A34A;
+}
+
+.icon-red {
+    background: #FEE2E2;
+    color: #DC2626;
+}
+
+.farmer-light-metric-label {
+    color: #475569 !important;
+    font-size: 16px;
+    font-weight: 800;
+}
+
+.farmer-light-metric-value {
+    color: #172033 !important;
+    font-size: 38px;
+    font-weight: 900;
+}
+
+.value-green {
+    color: #16A34A;
+}
+
+.value-red {
+    color: #DC2626;
+}
+
+/* Search and filters */
+
+[data-testid="stTextInput"] input {
+    background: #FFFFFF !important;
+    color: #172033 !important;
+    border: 1px solid #CBD5E1 !important;
+    border-radius: 11px !important;
+    min-height: 47px !important;
+}
+
+[data-testid="stTextInput"] input::placeholder {
+    color: #94A3B8 !important;
+    opacity: 1 !important;
+}
+
+[data-testid="stSelectbox"] > div > div {
+    background: #FFFFFF !important;
+    color: #172033 !important;
+    border-color: #CBD5E1 !important;
+    border-radius: 11px !important;
+    min-height: 47px !important;
+}
+
+/* Table heading */
+
+.farmers-table-title-card {
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    gap: 18px;
+    background: #FFFFFF;
+    border-radius: 18px 18px 0 0;
+    padding: 19px 21px;
+    margin-top: 22px;
+    border-bottom: 1px solid #E2E8F0;
+}
+
+.farmers-table-title {
+    color: #172033;
+    font-size: 19px;
+    font-weight: 850;
+}
+
+.farmers-table-subtitle {
+    color: #64748B;
+    font-size: 13px;
+    margin-top: 4px;
+}
+
+.farmers-result-count {
+    background: #EEF2FF;
+    color: #2A3C90;
+    border-radius: 9px;
+    padding: 8px 11px;
+    font-size: 12px;
+    font-weight: 800;
+}
+
+.farmers-light-table-header {
+    display: grid;
+    grid-template-columns:
+        1.7fr
+        1.9fr
+        1.25fr
+        1fr
+        1.1fr
+        1.1fr;
+    gap: 12px;
+
+    background: #F8FAFC;
+    color: #64748B;
+    border-bottom: 1px solid #E2E8F0;
+    padding: 14px 20px;
+    font-size: 11px;
+    font-weight: 850;
+    text-transform: uppercase;
+    letter-spacing: 0.07em;
+}
+
+/* Farmer rows */
+
+.farmer-light-name-cell {
+    display: flex;
+    align-items: center;
+    gap: 12px;
+    min-height: 62px;
+}
+
+.farmer-light-avatar {
+    width: 39px;
+    height: 39px;
+    border-radius: 50%;
+    color: #FFFFFF;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    font-size: 13px;
+    font-weight: 850;
+    flex-shrink: 0;
+}
+
+.farmer-light-name {
+    color: #172033;
+    font-size: 14px;
+    font-weight: 800;
+}
+
+.farmer-light-text-cell {
+    min-height: 62px;
+    display: flex;
+    align-items: center;
+    color: #F8FAFC;
+    font-size: 15px;
+    font-weight: 650;
+}
+
+.farmer-light-language {
+    display: inline-flex;
+    align-items: center;
+    justify-content: center;
+    background: #F1F5F9;
+    color: #475569;
+    border: 1px solid #DCE3EA;
+    border-radius: 8px;
+    min-width: 42px;
+    padding: 6px 9px;
+    font-size: 11px;
+    font-weight: 850;
+    margin-top: 16px;
+}
+
+.farmer-light-status {
+    display: inline-flex;
+    align-items: center;
+    gap: 6px;
+    border-radius: 999px;
+    padding: 6px 10px;
+    font-size: 12px;
+    font-weight: 800;
+    margin-top: 16px;
+}
+
+.farmer-light-status-active {
+    background: #DCFCE7;
+    color: #15803D;
+    border: 1px solid #BBF7D0;
+}
+
+.farmer-light-status-inactive {
+    background: #FEE2E2;
+    color: #B91C1C;
+    border: 1px solid #FECACA;
+}
+
+.farmer-light-row-divider {
+    height: 1px;
+    background: #E7ECF4;
+}
+
+/* Farmer action buttons */
+
+button[kind="secondary"] {
+    background: #FFF1F2 !important;
+    color: #DC2626 !important;
+    border: 1px solid #FECACA !important;
+    min-height: 37px !important;
+    border-radius: 9px !important;
+    font-size: 12px !important;
+    font-weight: 800 !important;
+}
+
+button[kind="secondary"]:hover {
+    background: #FEE2E2 !important;
+    color: #B91C1C !important;
+    border-color: #FCA5A5 !important;
+}
+
+button[kind="primary"] {
+    background: #DCFCE7 !important;
+    color: #15803D !important;
+    border: 1px solid #BBF7D0 !important;
+    min-height: 37px !important;
+    border-radius: 9px !important;
+    font-size: 12px !important;
+    font-weight: 800 !important;
+}
+
+button[kind="primary"]:hover {
+    background: #BBF7D0 !important;
+    color: #166534 !important;
+    border-color: #86EFAC !important;
+}
+
+.farmers-light-empty {
+    background: #FFFFFF;
+    color: #64748B;
+    border-radius: 0 0 18px 18px;
+    padding: 35px;
+    text-align: center;
+    font-size: 14px;
+}
+
+
+
+/* =========================================================
+   FIX ALL FORM LABELS ON DARK CARDS
+========================================================= */
+
+div[data-testid="stWidgetLabel"],
+div[data-testid="stWidgetLabel"] *,
+[data-testid="stTextInput"] label,
+[data-testid="stTextInput"] label *,
+[data-testid="stSelectbox"] label,
+[data-testid="stSelectbox"] label *,
+[data-testid="stCheckbox"] label,
+[data-testid="stCheckbox"] label *,
+[data-testid="stToggle"] label,
+[data-testid="stToggle"] label *,
+[data-testid="stTextArea"] label,
+[data-testid="stNumberInput"] label {
+    color: #F8FAFC !important;
+    opacity: 1 !important;
+    -webkit-text-fill-color: #F8FAFC !important;
+    font-weight: 700 !important;
+}
+
+/* Checkbox text */
+[data-testid="stCheckbox"] p {
+    color: #F8FAFC !important;
+    opacity: 1 !important;
+    -webkit-text-fill-color: #F8FAFC !important;
+}
+
+/* Disabled widget labels */
+[data-disabled="true"],
+[data-disabled="true"] *,
+[aria-disabled="true"],
+[aria-disabled="true"] * {
+    opacity: 1 !important;
+}
+
+/* Keep input values dark on white fields */
+[data-testid="stTextInput"] input,
+[data-testid="stSelectbox"] input {
+    color: #405788 !important;
+    -webkit-text-fill-color: #3f62ac !important;
+}
+
+/* Keep only the login form dark */
+
+[data-testid="stForm"]:has(.login-label) {
+    background: #1D202B !important;
+    border: 1px solid #343A4C !important;
+    border-radius: 0 0 28px 28px !important;
+    padding: 38px !important;
+    box-shadow: 0 15px 40px rgba(0,0,0,.30);
+}
+
+[data-testid="stForm"]:has(.login-label) input{
+    background:#2A2D3A !important;
+    color:white !important;
+    border:1px solid #464B63 !important;
+    border-radius:14px !important;
+}
+
+[data-testid="stForm"]:has(.login-label) input::placeholder {
+    color: #8E98B8 !important;
+}
+
+[data-testid="stForm"]:has(.login-label) .login-label {
+    color: #FFFFFF !important;
+}
+
+/* =========================================================
+   FINAL LOGIN FORM OVERRIDE — KEEP AT END OF FILE
+========================================================= */
+
+
+
+/* Placeholder text */
+[data-testid="stForm"] [data-testid="stTextInput"] input::placeholder {
+    color: #B5BED8 !important;
+    -webkit-text-fill-color: #B5BED8 !important;
+    opacity: 1 !important;
+}
+
+/* Green submit button */
+[data-testid="stForm"]
+[data-testid="stFormSubmitButton"] button {
+    background: #22C55E !important;
+    color: #07120A !important;
+    -webkit-text-fill-color: #07120A !important;
+    border: 1px solid #22C55E !important;
+    min-height: 58px !important;
+    border-radius: 13px !important;
+    font-size: 17px !important;
+    font-weight: 850 !important;
+    box-shadow: 0 10px 24px rgba(34, 197, 94, 0.25) !important;
+}
+
+/* Green button hover */
+[data-testid="stForm"]
+[data-testid="stFormSubmitButton"] button:hover {
+    background: #16A34A !important;
+    color: #FFFFFF !important;
+    -webkit-text-fill-color: #FFFFFF !important;
+    border-color: #16A34A !important;
+    transform: translateY(-1px);
+}
+
+/* Ensure button text inherits the correct color */
+[data-testid="stForm"]
+[data-testid="stFormSubmitButton"] button p {
+    color: inherit !important;
+    -webkit-text-fill-color: inherit !important;
+}
